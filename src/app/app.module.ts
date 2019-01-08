@@ -23,6 +23,9 @@ import { AlbumPage } from '../pages/album/album';
 import { Dialogs } from '@ionic-native/dialogs';
 import { DetailPage } from '../pages/detail/detail';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { RandomImageServiceProvider } from '../providers/random-image-service/random-image-service';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     MyApp,
@@ -35,6 +38,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
   ],
@@ -58,8 +62,10 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     PhotoLibrary,
     ImagePicker,
     Dialogs,
-    SocialSharing,    
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SocialSharing,
+    FileTransfer,    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RandomImageServiceProvider
   ]
 })
 export class AppModule {}
