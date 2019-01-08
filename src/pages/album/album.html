@@ -1,0 +1,25 @@
+<!--
+  Generated template for the AlbumPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{key}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div  *ngFor="let p of photos; index as i" >
+          {{ data[i] | date }}
+          <img src="{{p}}" (click)="dialogOpen(p)">
+  </div>
+    
+    <ion-fab bottom right>
+      <button ion-fab (click)="addItem()"> <ion-icon name="add"></ion-icon> </button>
+    </ion-fab>
+</ion-content>

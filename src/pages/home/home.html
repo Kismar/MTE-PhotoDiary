@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <!--<button ion-button primary (click)="takePhoto()" >Take Photo</button>
+    <button ion-button danger (click)="browse()" >Browse</button>-->
+    <button ion-button block (click)="library()">Library</button>
+
+<!--
+    <p *ngIf="picture">
+      <ion-img  [src]="domSatinizer.bypassSecurityTrustUrl(picture)"></ion-img>
+      "{{print}}"
+    </p>
+-->
+  </div>
+
+  <div *ngIf="!show">
+    <ion-item>
+      <ion-label color="primary" fixed>Name</ion-label>
+      <ion-input type="text" placeholder="Name of photo album" #name></ion-input>
+    </ion-item>
+    <button ion-fab primary (click)="save(name.value)">Save</button>
+    <p *ngFor="let p of images">
+    <img src="{{p}}">
+  </p>
+  
+</div>  
+</ion-content>
